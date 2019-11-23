@@ -17,7 +17,7 @@ class MAX44009:
 
     @configuration.setter
     def configuration(self, value):
-        self._config = value
+        self._config = bytearray(value)
         self.i2c.writeto_mem(self.address, 0x02, self._config)   # Register configuration
 
     @property
